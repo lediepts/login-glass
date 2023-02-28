@@ -1,0 +1,83 @@
+.bg-container {
+  $bgColor: #9e9d69;
+  $boxShadowColor: #ffffff;
+  $lightWidth: 30%;
+  $lightHeight: 10px;
+  $pha: 20deg;
+  position: absolute;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background: $bgColor;
+  .bl {
+    width: 100vw;
+    height: 100vh;
+    background: $bgColor;
+    position: absolute;
+    overflow: hidden;
+    animation: rotate360 20s infinite linear;
+    .rotate {
+      position: absolute;
+      z-index: 1;
+      left: 50%;
+      top: 50%;
+      width: $lightWidth;
+      height: $lightHeight;
+      transform: translate(-50%, -100%);
+      background: $boxShadowColor;
+      box-shadow: 0 0 4px rgba($color: $boxShadowColor, $alpha: 0.5),
+        0 -0.1rem 10px rgba($color: $boxShadowColor, $alpha: 0.6),
+        0 -0.2rem 20px rgba($color: $boxShadowColor, $alpha: 0.7),
+        0 -0.3rem 30px rgba($color: $boxShadowColor, $alpha: 0.8),
+        0 -0.4rem 40px rgba($color: $boxShadowColor, $alpha: 0.8),
+        0 -0.5rem 60px rgba($color: $boxShadowColor, $alpha: 0.8),
+        0 -0.6rem 80px rgba($color: $boxShadowColor, $alpha: 0.8),
+        0 -0.7rem 120px rgba($color: $boxShadowColor, $alpha: 0.9),
+        0 -0.8rem 160px rgba($color: $boxShadowColor, $alpha: 1),
+        0 -0.9rem 200px rgba($color: $boxShadowColor, $alpha: 1);
+    }
+    .nen {
+      z-index: 2;
+      background: rgba($color: $bgColor, $alpha: 0.5);
+      width: 100%;
+      height: 51%;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      &::after {
+        content: "";
+        background: rgba($color: $bgColor, $alpha: 0);
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform-origin: calc(50% - math.div($lightWidth, 2)) 0;
+        transform: rotate($pha)
+          translate(calc(-50% - math.div($lightWidth, 2)), 0);
+        width: 100%;
+        height: 100%;
+        filter: blur(1px);
+      }
+      &::before {
+        content: "";
+        background: rgba($color: $bgColor, $alpha: 0);
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform-origin: calc(50% + math.div($lightWidth, 2)) 0;
+        transform: rotate(-$pha)
+          translate(calc(50% + math.div($lightWidth, 2)), 0);
+        width: 100%;
+        height: 100%;
+        filter: blur(1px);
+      }
+    }
+  }
+  @keyframes rotate360 {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(356deg);
+    }
+  }
+}

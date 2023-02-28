@@ -1,0 +1,23 @@
+.login-form {
+  $color: #fff;
+  $boxShadowColor: #fff;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .content {
+    width: 100%;
+    max-width: 500px;
+    background: rgba($color, $alpha: 0.4);
+    padding: 1rem;
+    box-shadow: 0 8px 32px 0 rgba($color: $boxShadowColor, $alpha: 0.4);
+    backdrop-filter: blur(1.5px);
+    border-radius: 10px;
+    border: 1px solid rgba($color, $alpha: 0.2);
+    h2 {
+      font-size: calc(1.25vmin + 4px);
+    }
+  }
+}

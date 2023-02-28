@@ -1,0 +1,16 @@
+include ./variables
+
+block variables
+
+doctype html
+html(lang=lang)
+  head
+    include ./head.pug
+    block css
+      link(rel="stylesheet" href="index.css")
+  body
+    include /components/header
+    block body
+    include /components/footer
+    script(type="module" src="/js/home.js")
+    block js

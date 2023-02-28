@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  @apply text-base;
+  background-color: #ffffff;
+}
+
+.bg-container {
+  position: absolute;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  background: #9e9d69;
+}
+.bg-container .bl {
+  width: 100vw;
+  height: 100vh;
+  background: #9e9d69;
+  position: absolute;
+  overflow: hidden;
+  animation: rotate360 20s infinite linear;
+}
+.bg-container .bl .rotate {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  width: 30%;
+  height: 10px;
+  transform: translate(-50%, -100%);
+  background: #ffffff;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.5), 0 -0.1rem 10px rgba(255, 255, 255, 0.6), 0 -0.2rem 20px rgba(255, 255, 255, 0.7), 0 -0.3rem 30px rgba(255, 255, 255, 0.8), 0 -0.4rem 40px rgba(255, 255, 255, 0.8), 0 -0.5rem 60px rgba(255, 255, 255, 0.8), 0 -0.6rem 80px rgba(255, 255, 255, 0.8), 0 -0.7rem 120px rgba(255, 255, 255, 0.9), 0 -0.8rem 160px white, 0 -0.9rem 200px white;
+}
+.bg-container .bl .nen {
+  z-index: 2;
+  background: rgba(158, 157, 105, 0.5);
+  width: 100%;
+  height: 51%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+.bg-container .bl .nen::after {
+  content: "";
+  background: rgba(158, 157, 105, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 35% 0;
+  transform: rotate(20deg) translate(-65%, 0);
+  width: 100%;
+  height: 100%;
+  filter: blur(1px);
+}
+.bg-container .bl .nen::before {
+  content: "";
+  background: rgba(158, 157, 105, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 65% 0;
+  transform: rotate(-20deg) translate(65%, 0);
+  width: 100%;
+  height: 100%;
+  filter: blur(1px);
+}
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(356deg);
+  }
+}
+
+.login-form {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-form .content {
+  width: 100%;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.4);
+  padding: 1rem;
+  box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(1.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.login-form .content h2 {
+  font-size: calc(1.25vmin + 4px);
+}
